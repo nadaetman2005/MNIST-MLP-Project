@@ -1,30 +1,42 @@
-# Handwritten Digit Recognition (MNIST)
+# Handwritten Digit Recognition using PyTorch (MNIST)
 
-## Problem Description
-Building a Neural Network (MLP) to recognize handwritten digits (0-9)
-using the MNIST dataset.
+This project implements a Deep Learning model using PyTorch to recognize handwritten digits from the famous MNIST dataset.
 
-## Dataset
-- Source: Built-in Keras dataset
-- Training samples: 60,000 images
-- Testing samples: 10,000 images
-- Image size: 28×28 pixels
+## Project Idea
+The model takes a 28×28 grayscale image of a handwritten digit and predicts the correct number from 0 to 9 using a Multilayer Perceptron (MLP) neural network.
 
-## Results Comparison
+## Project Features
+- Loading and preprocessing the MNIST dataset
+- Flattening image data into vectors
+- Building an MLP model with PyTorch
+- Training using SGD optimizer and CrossEntropyLoss
+- Creating a validation set for evaluation
+- Performing different experiments:
+  - Changing hidden layer sizes
+  - Changing learning rate
+- Comparing experiment results
+- Visualizing Loss and Accuracy curves using Matplotlib
 
-| Experiment | Activation | Neurons | Test Accuracy |
-|------------|------------|---------|---------------|
-| Exp 1      | ReLU       | 128→64  | 97.59%        |
-| Exp 2      | Sigmoid    | 128→64  | 97.17%        |
-| Exp 3      | ReLU       | 256→128 | 97.92%        |
+## Baseline Model Architecture
+- Input Layer: 784 Neurons
+- Hidden Layer 1: 128 Neurons
+- Hidden Layer 2: 64 Neurons
+- Output Layer: 10 Neurons
 
-## Best Result: 97.92% (Experiment 3)
+## Technologies Used
+- Python
+- PyTorch
+- NumPy
+- Matplotlib
+- Scikit-learn
 
-## How to Run
-1. Open the notebook in Google Colab
-2. Run all cells in order (Runtime → Run All)
+## Project Results
+The model achieved high accuracy in handwritten digit classification while demonstrating how architectural changes and learning rate adjustments affect performance.
 
-Observations
-
-    ReLU vs Sigmoid: Using sigmoid slowed down the training process and resulted in slightly lower accuracy compared to relu, proving that relu is a better choice for hidden layers in this architecture.
-    Network Size: Increasing the neurons (Exp 3) gave the best accuracy (97.92%), but looking at the training curves in the notebook, it also showed early signs of overfitting compared to the baseline.
+## Project Goals
+Understanding the fundamentals of:
+- Neural Networks
+- Deep Learning with PyTorch
+- Data preprocessing
+- Model evaluation
+- Experiment comparison and performance analysis
